@@ -1,0 +1,32 @@
+<div class="page" [vnxTheme]="'light'">
+  <vnx-container size="md">
+    <vnx-stack gap="lg">
+      <vnx-stack gap="sm">
+        <vnx-text variant="display" element="h1">{{ title }}</vnx-text>
+        <vnx-text variant="body" [muted]="true">{{ message }}</vnx-text>
+      </vnx-stack>
+
+      <vnx-card title="Form controls" subtitle="@ng-nexus/commoncontrols from F:\CommonControls\ng-Nexus-Common-Controls" [elevated]="true">
+        <vnx-stack>
+          <vnx-form-field label="Full name" hint="VnxTextField + VnxFormField" [required]="true">
+            <vnx-text-field [(ngModel)]="name" name="fullName" placeholder="Jane Doe" />
+          </vnx-form-field>
+
+          <vnx-form-field label="Region">
+            <vnx-select
+              [(ngModel)]="region"
+              name="region"
+              [options]="regions"
+              placeholder="Select region"
+            />
+          </vnx-form-field>
+
+          <vnx-checkbox [(ngModel)]="subscribed" name="subscribed">Email updates</vnx-checkbox>
+          <vnx-switch [(ngModel)]="notifications" name="notifications">Push notifications</vnx-switch>
+
+          <vnx-button variant="gradient" (pressed)="onSave()">Save</vnx-button>
+        </vnx-stack>
+      </vnx-card>
+    </vnx-stack>
+  </vnx-container>
+</div>
